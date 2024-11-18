@@ -104,6 +104,22 @@ public:
 
     void addBooking(string movie, string time, vector<string> seats) {
         bookings.push_back(make_pair(movie, make_pair(time, seats)));
+        saveBookingToFile(movie, time, seats);
+    }
+
+    void saveBookingToFile(string movie, string time, vector<string> seats) {
+        ofstream file("booking_history.txt", ios::app);
+        if (file.is_open()) {
+            file << "Customer: " << customerName << "\n";
+            file << "Movie: " << movie << " | Time: " << time << " | Seats: ";
+            for (const string& seat : seats) {
+                file << seat << " ";
+            }
+            file << "\n\n";
+            file.close();
+        } else {
+            cout << "Error: Could not open booking history file!" << endl;
+        }
     }
 
     void displayBookingHistory() {
@@ -116,6 +132,7 @@ public:
         }
     }
 };
+
 
 class User {
 public:
