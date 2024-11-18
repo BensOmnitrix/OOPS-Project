@@ -237,6 +237,21 @@ void adminMode(vector<Movie>& movies) {
                 times.push_back(time);
             }
             movies.push_back(Movie(name, times));
+            ofstream file("movies.csv", ios::app);
+            if (file.is_open()) {
+                file << name << ",";
+                for (size_t i = 0; i < times.size(); ++i) {
+                    file << times[i];
+                    if (i < times.size() - 1) file << "|"; // Separate showtimes with '|'
+                }
+                file << 25;
+                file << "\n";
+                file.close();
+                cout << "Movie added successfully and updated in movies.csv!\n";
+            } else {
+                cout << "Error: Could not open movies.csv for updating!\n";
+            }
+            break;
             break;
         }
         case 2: {
