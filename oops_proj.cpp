@@ -242,12 +242,12 @@ void adminMode(vector<Movie>& movies) {
                 file << name << ",";
                 for (size_t i = 0; i < times.size(); ++i) {
                     file << times[i];
-                    if (i < times.size() - 1) file << "|"; // Separate showtimes with '|'
+                    if (i < times.size() - 1) file << "|"; 
                 }
-                file << 25;
+                file << ",25";
                 file << "\n";
                 file.close();
-                cout << "Movie added successfully and updated in movies.csv!\n";
+                cout << "Movie added successfully\n";
             } else {
                 cout << "Error: Could not open movies.csv for updating!\n";
             }
