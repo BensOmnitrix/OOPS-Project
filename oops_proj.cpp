@@ -252,7 +252,6 @@ void adminMode(vector<Movie>& movies) {
                 cout << "Error: Could not open movies.csv for updating!\n";
             }
             break;
-            break;
         }
         case 2: {
             string name, time;

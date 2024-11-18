@@ -4,3 +4,6 @@ Movie: Dangal | Time: 2:00PM | Seats: A1 A2 A3 A4 A5 B1 B2 B3 B4 B5 C1 C2 C3 C4 
 Customer: Kesar
 Movie: Animal | Time: 6:00PM | Seats: A1 A2 
 
+Customer: Priyanshu
+Movie: Animal | Time: 3:00PM | Seats: A1 E5 B2 
+
